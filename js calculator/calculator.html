@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+  <label for="Ilk Sayı">Ilk Say:</label>
+  <input type="text" id="Ilk" name="Ilk"><br><br>
+  <label for="Ikinci Sayı">Ikinci Sayı:</label>
+  <input type="text" id="Ikıncı" name="Ikıncı"><br><br>
+  <input type="button" value="TOPLA" onclick="topla()">
+  <input type="button" value="Çarp" onclick="carp()">
+  <input type="button" value="Çıkar" onclick="cikar()">
+  <input type="button" value="Böl" onclick="bol()">
+  <br><br>
+  <label for="Sonuç">Sonuç:</label>
+  <input type="text" id="Sonuç" name="Sonuç" readonly><br><br>
+
+</body>
+
+<script>
+  function topla() {
+      var ilk = document.getElementById('Ilk').value;
+      var ikinci = document.getElementById('Ikıncı').value;
+      document.getElementById('Sonuç').value = Number(ilk) + Number(ikinci);
+  }
+
+  function carp() {
+      var ilk = document.getElementById('Ilk').value;
+      var ikinci = document.getElementById('Ikıncı').value;
+      document.getElementById('Sonuç').value = Number(ilk) * Number(ikinci);
+  }
+
+  function cikar() {
+      var ilk = document.getElementById('Ilk').value;
+      var ikinci = document.getElementById('Ikıncı').value;
+      document.getElementById('Sonuç').value = Number(ilk) - Number(ikinci);
+  }
+
+  function bol() {
+      var ilk = document.getElementById('Ilk').value;
+      var ikinci = document.getElementById('Ikıncı').value;
+      document.getElementById('Sonuç').value = Number(ilk) / Number(ikinci);
+  }
+</script>
+</html>
