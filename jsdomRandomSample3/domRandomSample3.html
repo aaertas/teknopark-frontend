@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border-style: solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px;
+        }
+
+        #container {
+            display: flex;
+            justify-content: space-evenly;
+            padding-left: 60px;
+            padding-right: 200px;
+            padding-left: 200px;
+            margin-bottom: 50px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+        <div class="box" id="box5"></div>
+        <div class="box" id="box6"></div>
+    </div>
+    <div style="display: flex; justify-content: center;">
+        <button onclick="generate()" style="width: 200px; height: 100px;">ÇEKİLİŞ</button>
+    </div>
+
+    <script>
+       
+        function generate() {
+            var randomNumbers = [];
+            while(randomNumbers.length < 6){
+                var randomNumber = Math.floor(Math.random() * 49) + 1;
+                if(!randomNumbers.includes(randomNumber)){
+                    randomNumbers.push(randomNumber);
+                }
+            }
+
+            for (var i = 0; i < 6; i++) {
+                document.getElementById('box' + (i + 1)).innerText = randomNumbers[i];
+            }
+        }
+    </script>
+</body>
+
+</html>
