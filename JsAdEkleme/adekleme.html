@@ -16,8 +16,8 @@
 var isimler = [];
 
 function ekle() {
-  var ad = document.getElementById("ad").value;
-  var soyad = document.getElementById("soyad").value;
+  var ad = document.getElementById("ad").value.toUpperCase();
+  var soyad = document.getElementById("soyad").value.toUpperCase();
   
   isimler.push(ad + " " + soyad);
   
