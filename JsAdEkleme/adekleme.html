@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Ad ve Soyad Ekleme</h2>
+
+<label for="ad">Ad:</label>
+<input type="text" id="ad" name="ad"><br>
+<label for="soyad">Soyad:</label>
+<input type="text" id="soyad" name="soyad"><br>
+<button onclick="ekle()">Ekle</button>
+
+<p id="liste"></p>
+
+<script>
+var isimler = [];
+
+function ekle() {
+  var ad = document.getElementById("ad").value;
+  var soyad = document.getElementById("soyad").value;
+  
+  isimler.push(ad + " " + soyad);
+  
+  document.getElementById("liste").innerHTML = isimler.join(", ");
+}
+</script>
+
+</body>
+</html>
