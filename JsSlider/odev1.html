@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #slider {
+          font: 19px sans-serif;
+          margin: 0px auto;
+          position: relative;
+          width: 600px;
+          height: 300px;
+          overflow: hidden;
+        }
+      
+        #kontrol {
+          position: absolute;
+          right: 0px;
+          bottom: 10px;
+        }
+      
+        #kontrol a {
+          color: #ffffff;
+          background-color: rgba(0, 0, 0, 0.5);
+          padding: 10px;
+          text-decoration: none;
+        }
+
+        .slayt img {
+          width: 100%;
+          height: 100%;
+        }
+      </style>
+</head>
+<body>
+    <div id="slider">
+        <div class="slayt"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/9465FE89C69D5B8EDA4F17D69AD5168F61D198B66E68FE107470C80907CF42D2/scale?width=2880&aspectRatio=1.78&format=jpeg" /></div>
+        <div class="slayt"><img src="https://id.c3kienthuyhp.edu.vn/wp-content/uploads/2023/11/Inside-Out-2-Trailer-Anxiety-Enters-Rileys-Head-2.jpg" /></div>
+        <div class="slayt"><img src="https://dab57h0r8ahff.cloudfront.net/577516/uploads/fb0b09b0-0cb2-11ed-8d49-11a39034464e_800_420.jpeg" /></div>
+        <div class="slayt"><img src="https://blogs.oxford.anglican.org/wp-content/uploads/2016/01/inside-out.jpg" /></div>
+        <div id="kontrol">
+          <a href="javascript:oncekiSlayt()">Önceki</a>
+          <a href="javascript:sonrakiSlayt()">Sonraki</a>
+        </div>
+      </div>
+      <script>
+        "use strict";
+          var _slayt = document.getElementsByClassName("slayt");
+          var slaytSayisi = _slayt.length;
+          var slaytNo = 0;
+          var i = 0;
+          var interval;
+        
+          slaytGoster(slaytNo);
+          interval = setInterval(sonrakiSlayt, 2000); // 2 saniyede bir otomatik geçiş yapar
+        
+          function sonrakiSlayt() {
+            slaytNo++;
+            slaytGoster(slaytNo);
+          }
+        
+          function oncekiSlayt() {
+            slaytNo--;
+            slaytGoster(slaytNo);
+          }
+        
+          function slaytGoster(slaytNumarasi) {
+            slaytNo = slaytNumarasi;
+        
+            if (slaytNumarasi >= slaytSayisi) slaytNo = 0;
+        
+            if (slaytNumarasi < 0) slaytNo = slaytSayisi - 1;
+        
+            for (i = 0; i < slaytSayisi; i++) {
+              _slayt[i].style.display = "none";
+            }
+        
+            _slayt[slaytNo].style.display = "block";
+        
+          }
+        </script>
+</body>
+</html>
