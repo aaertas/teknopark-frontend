@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <label for="number">Number:</label>
+      <div id="number">Sayı</div>
+    </div>
+    <div>
+      <button id="buton" onclick="ekle()">Add</button>
+    </div>
+    <ul id="liste"></ul>
+  </body>
+  <script>
+    var sayilar = [];
+
+    function ekle() {
+      if (sayilar.length >= 15) {
+        alert("15 sayıdan fazla eklenemez.");
+        return;
+      }
+      
+      var sayi = Math.floor(Math.random() * 100) + 1;
+      
+      if (sayilar.includes(sayi)) {
+        alert("Bu sayı zaten listeye eklenmiş.");
+        return;
+      }
+      
+      sayilar.push(sayi);
+      
+      var li = document.createElement("li");
+      li.appendChild(document.createTextNode(sayi));
+      document.getElementById("liste").appendChild(li);
+    }
+  </script>
+</html>
